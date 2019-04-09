@@ -25,8 +25,7 @@ const S_profileSchema = new Schema({
         type: String
     },
     country: {
-        type: String,
-        required: true
+        type: String
     },
     skills: {
         type: [String],
@@ -64,7 +63,7 @@ const S_profileSchema = new Schema({
             }
         }
     ],
-    eduction: [
+    education: [
         {
             school: {
                 type: String,
@@ -74,7 +73,7 @@ const S_profileSchema = new Schema({
                 type: String,
                 required: true
             },
-            fieldOfStudy: {
+            fieldofstudy: {
                 type: String,
                 required: true
             },

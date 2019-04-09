@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box; }
+  
+  a {
+    text-decoration: none;
+    color: inherit; }
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  
+  html,
+  body,
+  .site-wrapper {
+    width: 100%;
+    height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0; }
+  
+  .site-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff; }
+  
+  .d-flex {
+    display: flex; }
+  
+  .align-items-center {
+    align-items: center; }
+  
+  /*
+      Components
+  */
+  .navbar-brand img {
+    display: flex;
+    width: 100px; }
+  
+  .navbar {
+    border-bottom: 1px solid #eee; }
+  
+  .sidebar {
+    flex-grow: 1;
+    background-color: #011f4b;
+    max-width: 240px;
+    height: 100vh;
+    border-right: 1px solid #eee; }
+    .sidebar header {
+      padding: 0em; }
+    .sidebar .menu .menu-item {
+      display: block;
+      padding: 1em 2em;
+      font-size: 14px;
+      color: #fff; }
+      .sidebar .menu .menu-item:hover, .sidebar .menu .menu-item.active {
+        background-color: #0249b0;
+        text-decoration: none;
+        color: #fff; }
+    .sidebar .menu-icon {
+      width: 30px;
+      text-align: center;
+      color: #fff; }
+  
+  .main-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; }
+  
+  .site-header {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    max-height: 49px;
+    border-bottom: 1px solid #eee; }
+    .site-header .searchbar {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      padding: 0 2em;
+      color: #dbdbdb; }
+      .site-header .searchbar input {
+        flex-grow: 1;
+        border: 0;
+        padding: 5px;
+        background-color: transparent;
+        outline: none;
+        margin-left: 10px; }
+    .site-header .notification-bell,
+    .site-header .user-info {
+      padding: 1em;
+      border-left: 1px solid #f9f9f9;
+      border-right: 1px solid #f9f9f9; }
+    .site-header .user-info {
+      display: flex;
+      align-items: center;
+      position: relative; }
+      .site-header .user-info .user-avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+        background-color: #40915C;
+        color: #dbdbdb;
+        font-size: 14px;
+        text-align: center;
+        margin-right: 10px; }
+    .site-header .user-name {
+      font-size: 14px;
+      color: #011f4b;
+      font-weight: 600; }
+  
+  .pricing .card {
+    border: none;
+    border-radius: 1rem;
+    transition: all 0.2s;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1); }
+  
+  .col-lg-3 {
+    padding-bottom: 15px; }
+  
+  .card-body {
+    padding: 1rem; }
+  
+  .pricing hr {
+    margin: 1.5rem 0; }
+  
+  .pricing .card-title {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    letter-spacing: .1rem;
+    font-weight: bold; }
+  
+  .pricing .card-price {
+    font-size: 3rem;
+    margin: 0; }
+  
+  .pricing .card-price .period {
+    font-size: 0.8rem; }
+  
+  .pricing ul li {
+    margin-bottom: 1rem; }
+  
+  .pricing .text-muted {
+    opacity: 0.7; }
+  
+  .pricing .btn {
+    font-size: 80%;
+    border-radius: 5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 1rem;
+    opacity: 0.7;
+    transition: all 0.2s; }
+  
+  /* Hover Effects on Card */
+  @media (min-width: 992px) {
+    .pricing .card:hover {
+      margin-top: -.25rem;
+      margin-bottom: .25rem;
+      box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3); }
+  
+    .pricing .card:hover .btn {
+      opacity: 1; } }
+  .wrapper {
+    margin: 2rem 0rem;
+    width: 50%; }
+  
+  /*# sourceMappingURL=dashboard.css.map */
+  

@@ -9,6 +9,10 @@ const Schema = mongoose.Schema;
 
 // MARK: CREATE SHEMA, MODEL
 const S_userSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    },
     email: {
         type: String,
         required: true
@@ -17,9 +21,9 @@ const S_userSchema = new Schema({
         type: String,
         required: true
     },
-    password2: {
-        type: String,
-        required: true
+    iscompany: {
+        type: Boolean,
+        default: false
     },
     date: {
         type: Date,

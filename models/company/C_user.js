@@ -20,9 +20,9 @@ const C_userSchema = new Schema({
         type: String,
         required: true
     },
-    password2: {
-        type: String,
-        required: true
+    iscompany: {
+        type: Boolean,
+        default: true
     },
     date: {
         type: Date,
