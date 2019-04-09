@@ -50,7 +50,7 @@ app.use('/api/company/posts', posts);
 // Solvers
 app.use('/api/solver/s_users', s_users);
 app.use('/api/solver/s_profile', s_profile);
-// Server Static assets if in production
+// Server Static assets if in production: Source?
 if(process.env.NODE_ENV === 'production') {
     //Set static folder
     app.use(express.static('client/build'));
