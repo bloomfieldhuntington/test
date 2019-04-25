@@ -40,7 +40,7 @@ mongoose
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log(err));
     
-app.get('/', (req, res) => res.send('Hello'));
+//app.get('/', (req, res) => res.send('Hello'));
 
 // MARK: USE ROUTES
 // Companies
@@ -51,6 +51,13 @@ app.use('/api/company/posts', posts);
 app.use('/api/solver/s_users', s_users);
 app.use('/api/solver/s_profile', s_profile);
 // Server Static assets if in production: Source?
+
+// FOR TESTING 19/04/19
+app.use(express.static('client/build'));
+app.get('*', (req, res) => {
+	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+})
+
 if(process.env.NODE_ENV === 'production') {
     //Set static folder
     app.use(express.static('client/build'));
@@ -61,6 +68,6 @@ if(process.env.NODE_ENV === 'production') {
 
 
 // Using process.env.PORT for heroko compatibility. Depends on deployment target
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
