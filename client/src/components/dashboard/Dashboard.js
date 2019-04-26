@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../actions/profileActions';
+// Components
+import Sidebar from './Sidebar';
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -19,7 +21,11 @@ class Dashboard extends Component {
     } else {
       // Check if logged in user has profile data
       if(Object.keys(profile).length > 0) {
-        dashboardContent = <h1>Has profile</h1>
+        dashboardContent = (
+          <div>
+            <p className="lead text-muted m-3">Welcome <Link to={`/profile/${profile.company}`}>{user.name}</Link></p>
+          </div>
+        )
       } else {
         // User has no profile yet
         dashboardContent = (
@@ -42,18 +48,8 @@ class Dashboard extends Component {
 
     return (
     <div className="site-wrapper">
-        <aside className="sidebar">
-          <header>
-            <nav className="menu">
-                <ul>
-                    <li><a href="/dashbaord" className="menu-item"> <span className="menu-icon fa fa-plus-circle"></span> <span className="menu-label"> Create Project </span></a></li>
-                    <li><a href="/dashboard" className="menu-item"> <span className="menu-icon fa fa-exclamation-triangle"></span> <span className="menu-label"> Active Projects </span></a></li>
-                    <li><a href="/dashbaord" className="menu-item"> <span className="menu-icon fa fa-check-circle"></span> <span className="menu-label"> Solved Projects </span></a></li>
-                    <li><a href="/dashbaord" className="menu-item"> <span className="menu-icon fa fa-user-cog"></span> <span className="menu-label"> Edit Profile </span></a></li>
-                  </ul>
-            </nav>
-          </header>
-        </aside>
+
+        <Sidebar />
         
         <main className="main-wrapper">
            
@@ -78,24 +74,6 @@ class Dashboard extends Component {
                   <div className="row">
 
                   {dashboardContent}
-
-                    
-                    <div className="col-lg-3">
-                      <div className="card mb-5 mb-lg-0">
-                        <div className="card-body">
-                          <h5 className="card-title text-muted text-uppercase text-center">Project Name</h5>
-                          <h6 className="card-price text-center">Title</h6>
-                          <hr></hr>
-                          <ul className="fa-ul">
-                            <li><span className="fa-li"><i className="fas fa-clock"></i></span>Deadline</li>
-                            <li><span className="fa-li"><i className="fas fa-money-bill-alt"></i></span>$ Budget</li>
-                            <li><span className="fa-li"><i className="fas fa-info-circle"></i></span>Text</li>
-                          </ul>
-                          <a href="" className="btn btn-block btn-primary text-uppercase">Accept</a>
-                        </div>
-                      </div>
-                    </div>
-                    
 
                   </div>
                 </div>

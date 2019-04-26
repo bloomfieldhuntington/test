@@ -15,6 +15,7 @@ import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Footer from './components/layout/Footer';
 import PrivateRoute from './components/common/PrivateRoute';
+import WhoWeAre from './components/layout/whoWeAre';
 //import setAccessControl from './utils/setAccessControl';
 // Company (Business)
 import BusinessLogin from './components/auth/BusinessLogin';
@@ -75,6 +76,7 @@ class App extends Component {
         <Route exact path="/" component={Landing} />
         <Route exact path="/business_login" component={ BusinessLogin } />
         <Route exact path="/business_register" component={ BusinessRegistration} />
+        <Route exact path="/whoweare" component={ WhoWeAre } />
 
         <Switch>
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
