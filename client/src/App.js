@@ -22,11 +22,14 @@ import BusinessLogin from './components/auth/BusinessLogin';
 import BusinessRegistration from './components/auth/BusinessRegistration';
 import Dashboard from './components/dashboard/Dashboard';
 import CreateProfile from './components/create-profile/CreateProfile';
+import EditProfile from './components/edit-profile/EditProfile';
+import Posts from './components/posts/Posts';
 //Solver
 import Solver_login from './components/auth/Solver_login';
 import Solver_registration from './components/auth/Solver_registration';
 import DashboardSolver from './components/dashboard/DashboardSolver';
 import CreateProfileSolver from './components/create-profile/CreateProfileSolver';
+import EditProfileSolver from './components/edit-profile/EditProfileSolver';
 
 
 
@@ -78,18 +81,29 @@ class App extends Component {
         <Route exact path="/business_register" component={ BusinessRegistration} />
         <Route exact path="/whoweare" component={ WhoWeAre } />
 
+        {/* COMPANY */}
         <Switch>
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
         </Switch>
         <Switch>
           <PrivateRoute exact path="/create-profile" component={CreateProfile} />
         </Switch>
+        <Switch>
+          <PrivateRoute exact path="/edit-profile" component={EditProfile} />
+        </Switch>
+        <Switch>
+          <PrivateRoute exact path="/active-projects" component={Posts} />
+        </Switch>
 
+        {/* SOLVER */}
         <Switch>
         <PrivateRoute exact path="/dashboard_solver" component={DashboardSolver} />
         </Switch>
         <Switch>
           <PrivateRoute exact path="/create-profile-solver" component={CreateProfileSolver} />
+        </Switch>
+        <Switch>
+          <PrivateRoute exact path="/edit-profile-solver" component={EditProfileSolver} />
         </Switch>
 
         <Route exact path="/solver_login" component={Solver_login} />

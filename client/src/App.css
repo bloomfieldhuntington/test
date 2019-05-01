@@ -331,3 +331,8 @@ body{
   color: #fff;
 }
 /* DASHBOARD */
+
+/* WHITE BACKGROUND */
+.notBlue {
+  background-color: #fff;
+}
