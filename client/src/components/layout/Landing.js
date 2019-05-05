@@ -18,8 +18,9 @@ class Landing extends Component {
             <div className="landing-text">
                 <img id="showcase-logo" src={stuckcoder_logo} width="500" alt="logo"></img>
                 <h3>Marketplace & Community | Time Saver for Businesses</h3>
-            </div>            
+            </div>
         </section>
+        
 
         )
     }

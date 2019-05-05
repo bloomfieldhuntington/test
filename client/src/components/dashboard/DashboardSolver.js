@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getCurrentSolverProfile } from '../../actions/profileActionsSolver';
 // Components
 import SidebarSolver from './SidebarSolver';
+import BetaTestingAlert from './BetaTestingAlert';
 
 class DashboardSolver extends Component {
     componentDidMount() {
@@ -22,8 +23,8 @@ class DashboardSolver extends Component {
       // Check if logged in user has profile data
       if(Object.keys(profile).length > 0) {
         dashboardContent = (
-          <div>
-            <p className="lead text-muted m-3">Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link></p>
+          <div className="alert alert-primary" role="alert">
+            <p className="font-weight-bold m-1">Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link></p>
           </div>
         )
       } else {
@@ -69,21 +70,14 @@ class DashboardSolver extends Component {
               </div>
             </header>
             
+            {dashboardContent}
+
+            <BetaTestingAlert />
 
             
-            <section className="pricing py-5">
-                <div className="container">
-                  <div className="row">
 
-                  {dashboardContent}
-
-                    
-                    
-                    
-
-                  </div>
-                </div>
-              </section>
+            
+            
             
         </main>
         
