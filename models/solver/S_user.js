@@ -1,13 +1,11 @@
 // S_user.js
-// desciption: S_user or solver user. auth/registration
-// developer: Benjamin Opsal
-// owner: Stuckcoder AS
+// StuckCoder Development Team 2019
 
-// MARK: IMPORTS
+// MARK:- IMPORTS
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// MARK: CREATE SHEMA, MODEL
+// MARK:- CREATE SCHEMA, MODEL
 const S_userSchema = new Schema({
     name: {
         type: String,
@@ -15,20 +13,22 @@ const S_userSchema = new Schema({
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     password: {
         type: String,
         required: true
     },
-    iscompany: {
-        type: Boolean,
-        default: false
-    },
     date: {
         type: Date,
-        default: Date.now
+        default: Date.now()
+    },
+    accesscontrol: {
+        type: Number,
+        default: 2,
+        required: true
     }
 })
 
-module.exports = S_user = mongoose.model('s_users', S_userSchema);
+module.exports = S_user = mongoose.model('s_user', S_userSchema);

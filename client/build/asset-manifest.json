@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ce8b832f.chunk.css",
+    "main.js": "/static/js/main.e4cc78e8.chunk.js",
+    "main.js.map": "/static/js/main.e4cc78e8.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.1327f5a8.chunk.js": "/static/js/2.1327f5a8.chunk.js",
+    "static/js/2.1327f5a8.chunk.js.map": "/static/js/2.1327f5a8.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.5cb93d505b5092c0d0b3f4d80e60cd42.js": "/precache-manifest.5cb93d505b5092c0d0b3f4d80e60cd42.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.ce8b832f.chunk.css.map": "/static/css/main.ce8b832f.chunk.css.map",
+    "static/media/StuckCoder_Lying_Original_White_BG.svg": "/static/media/StuckCoder_Lying_Original_White_BG.981b6e74.svg",
+    "static/media/StuckCoder_Standing_Original_Dark_BG.svg": "/static/media/StuckCoder_Standing_Original_Dark_BG.ddf30f0c.svg",
+    "static/media/solver_login.css": "/static/media/artem-sapegin-b18TRXc8UPQ-unsplash.c6eb9f85.jpg",
+    "static/media/business_login.css": "/static/media/david-lee-1105949-unsplash.14b102ef.jpg"
+  }
+}

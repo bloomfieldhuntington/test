@@ -1,0 +1,89 @@
+/* landing.css */
+
+/* DEFAULTS & RESETS */
+html,body{
+    margin: 0;
+    padding: 0;
+}
+li{
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+}
+
+.container-login{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 1fr 50px;
+    grid-template-areas: "header header" "main main" "footer footer";
+    height: 100vh;
+}
+/* HEADER */
+.header{
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+}
+.header-image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.header-image{
+    margin-left: 40px;
+    width: 105px;
+}
+.header-links-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.header-links-left{
+    display: flex;
+    align-items: center;
+    color: #999999;
+}
+.header-links-right{
+    display: flex;
+    align-items: center;
+    color: #999999;
+    margin-right: 40px;
+}
+
+/* MAIN CONTENT */
+
+.main-login-business{
+    display: grid;
+    grid-template-columns: 450px 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "left right";
+    background: #011f4b;
+}
+
+.left{
+    grid-area: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #011f4b;
+}
+.right{
+    grid-area: right;
+    background: url('../img/david-lee-1105949-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 0 0 0 50px;
+}
+
+.footer{
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #011f4b;
+}

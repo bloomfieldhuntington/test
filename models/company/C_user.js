@@ -1,33 +1,33 @@
 // C_user.js
-// desciption: Cuser or company-user. Model of company user type
-// developer: Benjamin Opsal
-// owner: Stuckcoder AS
+// StuckCoder Development Team 2019
 
-// MARK: IMPORTS
+// MARK:- IMPORTS
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// MARK: CREATE SHEMA, MODEL
+// MARK:- CREATE SCHEMA, MODEL
 const C_userSchema = new Schema({
     name: {
-        type: String,
+        type: String
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     password: {
         type: String,
         required: true
     },
-    iscompany: {
-        type: Boolean,
-        default: true
-    },
     date: {
         type: Date,
         default: Date.now
+    },
+    accesscontrol: {
+        type: Number,
+        default: 1,
+        required: true
     }
 })
 
-module.exports = C_user = mongoose.model('c_users', C_userSchema);
+module.exports = C_user = mongoose.model('c_user', C_userSchema);

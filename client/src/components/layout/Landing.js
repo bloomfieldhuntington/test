@@ -1,35 +1,51 @@
-import React, { Component } from 'react'
-import { PropTypes } from 'prop-types';
+import React from 'react';
+import { Redirect } from 'react-router-dom';
+import StuckCoder_Standing_Original_Dark_BG from '../../img/official/../../img/official/StuckCoder_Standing_Original_Dark_BG.svg';
 import { connect } from 'react-redux';
-import stuckcoder_logo from '../../img/stuckcoder_logo.png';
+import PropTypes from 'prop-types';
+import Navbar from './Navbar';
+// css
+import '../../css/stuck.css';
+import '../../css/landing.css';
+// Utils
+const jwtDecode = require('jwt-decode');
 
-class Landing extends Component {
 
-    // Stop users from reaching login after auth is success
-    componentDidMount() {
-        if(this.props.auth.isAuthenticated) {
-            this.props.history.push('/dashboard')
+const Landing = ({ isAuthenticated }) => {
+    if(isAuthenticated && localStorage.token){
+        const decoded = jwtDecode(localStorage.token);
+        if(decoded.user.role === 1) {
+            return <Redirect to="/c_dashboard" />
+        } else if(decoded.user.role === 2) {
+            return <Redirect to="/s_dashboard" />
         }
     }
+    return (
+        <div className="container-landing">
 
-    render() {
-        return (
-        <section id="showcase">
-            <div className="landing-text">
-                <img id="showcase-logo" src={stuckcoder_logo} width="500" alt="logo"></img>
-                <h3>Marketplace & Community | Time Saver for Businesses</h3>
-            </div>
-        </section>
-        
+        <Navbar />
 
-        )
-    }
+            <main className="main">
+                <div className="main-content">
+                    <h1 className="main-title">Welcome to</h1>
+                    <img src={StuckCoder_Standing_Original_Dark_BG} alt="Stuckcoder" className="main-logo"></img>
+                    <div className="main-text-container">
+                        <p className="main-text">Online Hub for Businesses and I.T Talents.
+                                    Efficient, Fair and Safe outsourcing of I.T projects.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    )
 }
+
 Landing.propTypes = {
-    auth: PropTypes.object.isRequired
+    isAuthenticated: PropTypes.bool
 }
+
 const mapStateToProps = (state) => ({
-    auth: state.auth
-});
+    isAuthenticated: state.auth.isAuthenticated
+})
+
 
 export default connect(mapStateToProps)(Landing);

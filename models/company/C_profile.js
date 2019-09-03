@@ -1,17 +1,15 @@
 // C_profile.js
-// desciption: Company profile
-// developer: Benjamin Opsal
-// owner: Stuckcoder AS
+// StuckCoder Development Team 2019
 
-// MARK: IMPORTS
+// MARK:- IMPORTS
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// MARK: CREATE SHEMA, MODEL
+// MARK:- CREATE SCHEMA, MODEL
 const C_profileSchema = new Schema({
     user: {
-        type: Schema.Types.ObjectId,
-        ref: 'c_users'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'c_user'
     },
     company: {
         type: String,
@@ -26,9 +24,6 @@ const C_profileSchema = new Schema({
         required: true
     },
     website: {
-        type: String
-    },
-    avatar: {
         type: String
     },
     date: {
